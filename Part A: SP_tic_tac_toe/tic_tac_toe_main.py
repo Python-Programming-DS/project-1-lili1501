@@ -13,12 +13,12 @@ def validateEntry(row, col, board):
 
     # Check if row and col entered are in range
     if row < 0 or row > 2 or col < 0 or col >2:
-        print(f"Invalid entry: try again.\nRow & column numbers must be either 0, 1, or 2")
+        print(f"Invalid entry: try again.\nRow & column numbers must be either 0, 1, or 2.")
 
     # Check if the cell is available
     elif board[row][col] != " ":
         print(f"That cell is already taken.\nPlease make another selection.")
-        
+
     else:
         print("Thankyou for your selection")
         return True
@@ -67,7 +67,7 @@ def main():
                 else:
                     turn = 'X'
 
-        print("\n\033[0mAnother game? Enter either Y or y for yes:\033[91m", end="\n")
+        print("\n\033[0mAnother game? Enter Y or y for yes:\033[91m", end="\n")
         another_game = input()
         print("\033[0m", end="")
 

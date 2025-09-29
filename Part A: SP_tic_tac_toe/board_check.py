@@ -1,4 +1,4 @@
-#to check if board is full
+#To check if there is winner player
 def checkWin(board, turn):
     for i in range(3):
         if i == 0:
@@ -17,6 +17,7 @@ def checkWin(board, turn):
     return False
 
 
+#To check if the board is full/it's draw
 def checkFull(board):
     for i in range(3):
         for j in range(3):
@@ -26,6 +27,7 @@ def checkFull(board):
     return True
 
 
+#To end the game if a player wins or if the board is full
 def checkEnd(board, turn):
     if checkWin(board,turn)== True :
         return True
