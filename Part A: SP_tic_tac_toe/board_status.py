@@ -1,3 +1,4 @@
+#Display the current status of board
 def display_board(board):
     print("-"*23)
     for i in range(4):
@@ -7,7 +8,7 @@ def display_board(board):
         if i <3:
             print(f"| {i} |  {board[i][0]}  |  {board[i][1]}  |  {board[i][2]}  |")
 
-
+#To reset the board whenever called
 def reset_board(board):
     for i in range(3):
         for j in range(3):
