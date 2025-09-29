@@ -1,7 +1,19 @@
+# File: connect4_main.py
+# A 2 player program built to play connect four
+# The first player to get 4's in row, col, diagnol wins
+# File Used in main.py
+#.    1.board_check.py (The following py file check if it's draw/Win )
+#.    2.board_view.py (The following py file display/reset the board)
+#.    3.check_avail_position.py (The py file check the position available for player to choose )
+#.    4.row_col_conversion.py (The py file converts the alpa numeric position to integer value)
+# By: Shesadree Priyadarshani 
+
 from board_view import *
+from row_col_conversion import *
+from check_avail_position import *
 from board_check import checkEnd
 
-#to validate the entry
+#To validate the entry
 def validateEntry(row, col, pos,board,available):
 
     # Check if the user has selected from the available list
@@ -24,6 +36,7 @@ def main():
         board.append([" "] * 7)
     
     another_game = 'y'
+    #Intialize a new game
     while another_game.lower() == 'y':
        
         print("New Game: X goes first\n")
@@ -31,11 +44,16 @@ def main():
         display_board(board)
         End_game = False
         turn = 'X'
+
+        #To get the initial bottom places in the board
         available = init_avail_pos()
+
+        #Start Game
         while End_game != True: 
             print(f"\n{turn}'s turn")
             print(f"Where do you want your {turn} placed?")
 
+            #To update the position availability based on user choice
             available = available_position(board,available)
             print(f"Available Positions are : {available}\n")
 

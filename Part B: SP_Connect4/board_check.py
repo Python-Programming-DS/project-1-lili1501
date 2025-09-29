@@ -1,3 +1,4 @@
+#To check if it's draw
 def checkFull(board):
     for i in range(6):
         for j in range(7):
@@ -6,7 +7,9 @@ def checkFull(board):
     print("\nDRAW NOBODY WINS!")
     return True
 
+#To check if there is a winner player
 def checkWin(board,turn):
+
     # 6 rows and 7 cols, check each row for 4 continuous 'X' or 'O'
     for i in range(6):
         for j in range(4):
@@ -35,6 +38,7 @@ def checkWin(board,turn):
                 return True
     return False
 
+#To end the game if there is a winner or board is full
 def checkEnd(board,turn):
     if checkWin(board,turn)==True:
         return True
